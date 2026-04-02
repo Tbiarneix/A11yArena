@@ -1,0 +1,12 @@
+@use '@/design/tokens' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background-color: $color-surface-container-low;
+  border-bottom: 1px solid $color-surface-container-high;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}

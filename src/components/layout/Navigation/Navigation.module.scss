@@ -1,0 +1,98 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: $space-8;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $space-8;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    text-decoration: none;
+    flex-shrink: 0;
+
+    @include focus-ring;
+  }
+
+  &__logo-icon {
+    font-size: $font-size-xl;
+    color: $color-primary;
+    line-height: 1;
+  }
+
+  &__logo-text {
+    font-family: $font-display;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    letter-spacing: $letter-spacing-tight;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+
+  &__item {
+    // no extra styles needed
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-3;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface-variant;
+    text-decoration: none;
+    border-radius: $radius-md;
+    @include transition(color, background-color);
+
+    &:hover {
+      color: $color-on-surface;
+      background-color: $color-surface-container;
+    }
+
+    @include focus-ring;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-4;
+    background: $gradient-cta;
+    color: $color-on-primary;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    @include transition(opacity);
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @include focus-ring;
+  }
+}

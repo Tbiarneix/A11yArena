@@ -25,7 +25,7 @@ export function Sidebar() {
             pathname === '/ui-library' ? styles['sidebar__overview--active'] : '',
           ].filter(Boolean).join(' ')}
         >
-          Vue d'ensemble
+          Vue d&apos;ensemble
         </Link>
 
         {CATEGORIES.map((category) => {

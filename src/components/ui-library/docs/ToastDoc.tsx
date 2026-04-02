@@ -19,7 +19,7 @@ export function ToastDoc() {
           <Toast variant="info">Challenge sauvegardé automatiquement.</Toast>
           <Toast variant="success">Bravo ! Tous les tests sont passés.</Toast>
           <Toast variant="warning">Attention : certains attributs ARIA manquent.</Toast>
-          <Toast variant="error">Erreur critique d'accessibilité détectée.</Toast>
+          <Toast variant="error">Erreur critique d&apos;accessibilité détectée.</Toast>
         </div>
         <CodeBlock
           label="Usage"

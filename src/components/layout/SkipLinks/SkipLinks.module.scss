@@ -1,0 +1,30 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-tooltip;
+  display: flex;
+  gap: $space-2;
+
+  &__link {
+    @include visually-hidden-focusable;
+
+    padding: $space-3 $space-4;
+    background-color: $color-primary;
+    color: $color-on-primary;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    border-radius: $radius-md;
+
+    &:focus,
+    &:focus-within {
+      outline: 2px solid $color-on-primary;
+      outline-offset: 2px;
+    }
+  }
+}

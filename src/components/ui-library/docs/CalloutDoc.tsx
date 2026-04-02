@@ -30,7 +30,7 @@ export function CalloutDoc() {
             Pensez à vérifier que votre champ de formulaire a un label associé via htmlFor.
           </Callout>
           <Callout variant="warning" title="Attention">
-            Ce pattern n'est pas supporté par tous les lecteurs d'écran.
+            Ce pattern n&apos;est pas supporté par tous les lecteurs d&apos;écran.
           </Callout>
         </div>
         <CodeBlock

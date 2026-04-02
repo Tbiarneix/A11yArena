@@ -31,8 +31,9 @@ export function generateStaticParams() {
   return COMPONENT_REGISTRY.map((c) => ({ slug: c.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const component = getComponent(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const component = getComponent(slug);
   if (!component) return {};
   return {
     title: `${component.label} — UI Library — A11y Arena`,
@@ -40,15 +41,16 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ComponentDocPage({
+export default async function ComponentDocPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const component = getComponent(params.slug);
+  const { slug } = await params;
+  const component = getComponent(slug);
   if (!component) notFound();
 
-  const DocComponent = DOC_COMPONENTS[params.slug];
+  const DocComponent = DOC_COMPONENTS[slug];
   if (!DocComponent) notFound();
 
   return <DocComponent />;

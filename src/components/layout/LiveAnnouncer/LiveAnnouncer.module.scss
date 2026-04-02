@@ -1,0 +1,5 @@
+@use '@/design/mixins' as *;
+
+.live-announcer {
+  @include visually-hidden;
+}
