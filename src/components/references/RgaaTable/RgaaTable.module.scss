@@ -1,0 +1,126 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.rgaa-table-wrapper {
+  overflow-x: auto;
+  border-radius: $radius-md;
+}
+
+.rgaa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  background-color: $color-surface-container-lowest;
+
+  &__caption {
+    @include visually-hidden;
+  }
+
+  &__th {
+    padding: $space-3 $space-4;
+    background-color: $color-surface-container-low;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-on-surface-variant;
+    text-align: left;
+    border-bottom: 1px solid $color-surface-container-high;
+  }
+
+  &__row {
+    border-bottom: 1px solid $color-surface-container;
+
+    &:hover {
+      background-color: $color-surface-container-low;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__id {
+    padding: $space-3 $space-4;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  &__id-text {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__theme {
+    padding: $space-3 $space-4;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  &__theme-badge {
+    display: inline-flex;
+    padding: $space-1 $space-2;
+    background-color: $color-surface-container;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    border-radius: $radius-sm;
+  }
+
+  &__title {
+    padding: $space-3 $space-4;
+    vertical-align: top;
+  }
+
+  &__title-text {
+    display: block;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface;
+    margin-bottom: $space-1;
+  }
+
+  &__desc {
+    display: block;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    line-height: $line-height-relaxed;
+  }
+
+  &__level {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-1 $space-3;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-sm;
+
+    &--a {
+      background-color: $color-secondary-container;
+      color: $color-on-secondary-container;
+    }
+    &--aa {
+      background-color: $color-surface-container-highest;
+      color: $color-primary;
+    }
+  }
+
+  &__wcag {
+    padding: $space-3 $space-4;
+    vertical-align: top;
+  }
+
+  &__wcag-tag {
+    display: inline-flex;
+    padding: $space-1 $space-2;
+    background-color: $color-surface-container;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    border-radius: $radius-sm;
+    margin: $space-1 $space-1 0 0;
+  }
+}

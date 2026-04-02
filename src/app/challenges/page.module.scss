@@ -1,0 +1,64 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.hero {
+  background-color: $color-primary;
+  padding: $space-12 0;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-primary;
+    letter-spacing: $letter-spacing-tight;
+    margin: 0 0 $space-3;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    color: rgba($color-on-primary, 0.8);
+    margin: 0;
+  }
+}
+
+.content {
+  padding: $space-10 0 $space-20;
+  background-color: $color-surface;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+    display: flex;
+    flex-direction: column;
+    gap: $space-8;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.empty {
+  padding: $space-12;
+  text-align: center;
+  font-family: $font-body;
+  font-size: $font-size-md;
+  color: $color-on-surface-variant;
+}

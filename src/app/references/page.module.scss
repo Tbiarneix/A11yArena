@@ -1,0 +1,112 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.hero {
+  background-color: $color-primary;
+  padding: $space-12 0;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-primary;
+    letter-spacing: $letter-spacing-tight;
+    margin: 0 0 $space-3;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    color: rgba($color-on-primary, 0.8);
+    margin: 0;
+  }
+}
+
+.content {
+  padding: $space-12 0 $space-20;
+  background-color: $color-surface;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-6;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ref-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-8;
+  background-color: $color-surface-container-lowest;
+  border-top: 3px solid $color-primary;
+  height: 100%;
+
+  &__count {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-secondary;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    margin: 0;
+    letter-spacing: $letter-spacing-tight;
+  }
+
+  &__desc {
+    font-family: $font-body;
+    font-size: $font-size-md;
+    color: $color-on-surface-variant;
+    line-height: $line-height-relaxed;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-4;
+    background-color: $color-primary;
+    color: $color-on-primary;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    align-self: flex-start;
+    margin-top: $space-2;
+    @include transition(opacity);
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    @include focus-ring;
+  }
+}

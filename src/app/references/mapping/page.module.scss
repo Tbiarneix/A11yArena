@@ -1,0 +1,79 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.mapping-wrapper {
+  overflow-x: auto;
+  border-radius: $radius-md;
+}
+
+.mapping-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  background-color: $color-surface-container-lowest;
+
+  &__caption {
+    @include visually-hidden;
+  }
+
+  th {
+    padding: $space-3 $space-4;
+    background-color: $color-surface-container-low;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-on-surface-variant;
+    text-align: left;
+    border-bottom: 1px solid $color-surface-container-high;
+  }
+
+  tr {
+    border-bottom: 1px solid $color-surface-container;
+
+    &:hover {
+      background-color: $color-surface-container-low;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    padding: $space-3 $space-4;
+    vertical-align: top;
+    color: $color-on-surface;
+  }
+
+  &__wcag-id {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+  }
+
+  &__rgaa-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__rgaa-id {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    color: $color-secondary;
+    margin-right: $space-2;
+  }
+
+  &__rgaa-title {
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+  }
+}

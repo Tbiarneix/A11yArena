@@ -1,0 +1,134 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.header {
+  background-color: $color-primary;
+  padding: $space-12 0;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+
+  &__content {
+    max-width: 64ch;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-primary;
+    letter-spacing: $letter-spacing-tight;
+    margin: 0;
+  }
+
+  &__desc {
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    color: rgba($color-on-primary, 0.85);
+    line-height: $line-height-relaxed;
+    margin: 0;
+  }
+
+  &__meta {
+    display: flex;
+    gap: $space-8;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  &__meta-label {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: rgba($color-on-primary, 0.6);
+  }
+
+  &__meta-value {
+    font-family: $font-body;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-on-primary;
+    margin: $space-1 0 0;
+  }
+}
+
+.progress-bar-wrapper {
+  background-color: $color-surface-container-low;
+  border-bottom: 1px solid $color-surface-container-high;
+  padding: $space-4 0;
+  position: sticky;
+  top: 64px; // hauteur du header
+  z-index: $z-sticky;
+}
+
+.progress-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $space-8;
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.progress-bar {
+  &__label {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__track {
+    flex: 1;
+    height: 4px;
+    background-color: $color-surface-container-highest;
+    border-radius: $radius-full;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background-color: $color-secondary;
+    border-radius: $radius-full;
+    @include transition(width);
+  }
+}
+
+.timeline-section {
+  padding: $space-12 0 $space-20;
+  background-color: $color-surface;
+}
+
+.timeline-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.timeline-title {
+  font-family: $font-display;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  color: $color-on-surface;
+  margin: 0;
+}
+
+.empty {
+  padding: $space-12;
+  text-align: center;
+  font-family: $font-body;
+  font-size: $font-size-md;
+  color: $color-on-surface-variant;
+}

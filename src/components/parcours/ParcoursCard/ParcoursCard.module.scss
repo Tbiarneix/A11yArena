@@ -1,0 +1,185 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.parcours-card {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-6;
+  background-color: $color-surface-container-lowest;
+  border-left: 4px solid $color-primary;
+  @include transition(box-shadow, border-left-color);
+
+  &:hover {
+    box-shadow: $shadow-dropdown;
+  }
+
+  &--completed {
+    border-left-color: $color-secondary;
+  }
+
+  &--coming-soon {
+    background-color: $color-primary;
+    border-left-color: transparent;
+  }
+
+  &__coming-soon {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-inverse-primary;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  &__difficulty {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-1 $space-3;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    border-radius: $radius-sm;
+
+    &--easy {
+      background-color: $color-secondary-container;
+      color: $color-on-secondary-container;
+    }
+    &--medium {
+      background-color: $color-surface-container-highest;
+      color: $color-on-surface-variant;
+    }
+    &--hard {
+      background-color: $color-tertiary-container;
+      color: $color-on-tertiary-container;
+    }
+  }
+
+  &__count {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+    margin: 0;
+    line-height: $line-height-snug;
+
+    .parcours-card--coming-soon & {
+      color: $color-on-primary;
+    }
+  }
+
+  &__desc {
+    font-family: $font-body;
+    font-size: $font-size-md;
+    color: $color-on-surface-variant;
+    line-height: $line-height-relaxed;
+    margin: 0;
+    flex: 1;
+
+    .parcours-card--coming-soon & {
+      color: rgba($color-on-primary, 0.7);
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: $space-6;
+    margin: 0;
+  }
+
+  &__info-label {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+
+  &__info-value {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface;
+    margin: 0;
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  &__progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__progress-label {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+  }
+
+  &__progress-pct {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+  }
+
+  &__progress-bar {
+    height: 4px;
+    background-color: $color-surface-container-high;
+    border-radius: $radius-full;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background-color: $color-secondary;
+    border-radius: $radius-full;
+    @include transition(width);
+  }
+
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-2 $space-4;
+    background: $gradient-cta;
+    color: $color-on-primary;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    border-radius: $radius-sm;
+    align-self: flex-start;
+    @include transition(opacity);
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--completed {
+      background: none;
+      background-color: $color-secondary-container;
+      color: $color-on-secondary-container;
+    }
+
+    @include focus-ring;
+  }
+}

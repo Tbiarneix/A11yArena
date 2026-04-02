@@ -1,0 +1,95 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.hero {
+  background-color: $color-primary;
+  padding: $space-12 0;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-primary;
+    letter-spacing: $letter-spacing-tight;
+    margin: 0 0 $space-3;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    color: rgba($color-on-primary, 0.8);
+    margin: 0;
+  }
+}
+
+.content {
+  padding: $space-10 0;
+  background-color: $color-surface;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-4;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stats {
+  padding: $space-12 0;
+  background-color: $color-surface-container-low;
+  border-top: 1px solid $color-surface-container-high;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $space-8;
+  }
+
+  &__list {
+    display: flex;
+    gap: $space-16;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__label {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    color: $color-on-surface-variant;
+  }
+
+  &__value {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    letter-spacing: $letter-spacing-tight;
+    line-height: 1;
+  }
+}
