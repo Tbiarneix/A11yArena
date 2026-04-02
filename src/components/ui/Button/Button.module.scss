@@ -1,5 +1,5 @@
-@use '@/design/tokens' as *;
-@use '@/design/mixins' as *;
+@use "@/design/tokens" as *;
+@use "@/design/mixins" as *;
 
 .button {
   display: inline-flex;
@@ -75,6 +75,22 @@
 
     &:active:not(:disabled) {
       background-color: $color-surface-container;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $color-primary;
+    border: 1px solid $color-outline;
+
+    &:hover:not(:disabled) {
+      background-color: $color-surface-container-low;
+      border-color: $color-outline-variant;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $color-surface-container;
+      border-color: $color-outline-variant;
     }
   }
 }
