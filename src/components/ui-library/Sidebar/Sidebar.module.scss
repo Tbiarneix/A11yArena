@@ -1,0 +1,110 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  background-color: $color-surface-container-low;
+
+  &__header {
+    padding: $space-6 $space-5 $space-4;
+    border-bottom: 1px solid $color-surface-container-highest;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+    letter-spacing: $letter-spacing-tight;
+  }
+
+  &__subtitle {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    margin-top: $space-1;
+  }
+
+  &__nav {
+    flex: 1;
+    padding: $space-4 $space-3;
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__overview {
+    display: block;
+    padding: $space-2 $space-3;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface-variant;
+    text-decoration: none;
+    @include transition-colors;
+    @include focus-ring;
+
+    &:hover {
+      background-color: $color-surface-container-highest;
+      color: $color-on-surface;
+    }
+
+    &--active {
+      background-color: $color-surface-container-highest;
+      color: $color-on-surface;
+    }
+  }
+
+  &__group {
+    margin-top: $space-4;
+  }
+
+  &__groupLabel {
+    padding: $space-1 $space-3;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface-variant;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+    margin-bottom: $space-1;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__link {
+    display: block;
+    padding: $space-2 $space-3;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+    text-decoration: none;
+    @include transition-colors;
+    @include focus-ring;
+
+    &:hover {
+      background-color: $color-surface-container-highest;
+      color: $color-on-surface;
+    }
+
+    &--active {
+      background-color: rgba($color-primary, 0.08);
+      color: $color-primary;
+      font-weight: $font-weight-medium;
+
+      &:hover {
+        background-color: rgba($color-primary, 0.12);
+        color: $color-primary;
+      }
+    }
+  }
+}

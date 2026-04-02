@@ -1,0 +1,32 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  background-color: $color-surface;
+
+  @include breakpoint-down(lg) {
+    grid-template-columns: 220px 1fr;
+  }
+
+  &__main {
+    overflow-y: auto;
+    min-height: 100vh;
+
+    // Reset du outline sur :focus pour tabIndex=-1 (skip link target)
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__content {
+    padding: $space-10 $space-12;
+    max-width: 1000px;
+
+    @include breakpoint-down(lg) {
+      padding: $space-8;
+    }
+  }
+}

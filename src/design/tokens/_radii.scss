@@ -1,0 +1,10 @@
+// =============================================================================
+// TOKENS — Rayons de bordure
+// Stitch : "dev-tool feel" — pas de bubbly, radius sm et md uniquement
+// =============================================================================
+
+$radius-sm: 0.125rem;  // 2px  — boutons, badges (feel dev-tool)
+$radius-md: 0.375rem;  // 6px  — cartes, inputs, usage général
+$radius-full: 9999px;  // pill — tags, chips uniquement
+
+// Interdit : radius > md ("don't use rounded corners xl")

@@ -1,0 +1,62 @@
+// =============================================================================
+// TOKENS — Couleurs
+// Source de vérité : Stitch project 15833478698754473596
+// "The Precise Craftsman" design system
+// =============================================================================
+
+// Primary (Navy)
+$color-primary:           #002045;
+$color-primary-container: #1a365d;
+$color-on-primary:        #ffffff;
+$color-on-primary-container: #86a0cd;
+
+// Secondary (Green)
+$color-secondary:           #006d40;
+$color-secondary-container: #8ef5b5;
+$color-on-secondary:        #ffffff;
+$color-on-secondary-container: #007243;
+
+// Tertiary (Orange)
+$color-tertiary:           #3b1500;
+$color-tertiary-container: #5d2500;
+$color-on-tertiary:        #ffffff;
+$color-on-tertiary-container: #f57d32;
+
+// Surfaces — hiérarchie "No-Line Rule" (Stitch)
+// Les sections sont séparées par des décalages de fond, jamais par des bordures
+$color-surface:                   #f9f9f8; // Canvas principal
+$color-surface-container-lowest:  #ffffff; // Cartes sur fond container
+$color-surface-container-low:     #f3f4f3; // Sidebars, zones structurelles
+$color-surface-container:         #eeeeed; // Séparateur doux
+$color-surface-container-high:    #e8e8e7;
+$color-surface-container-highest: #e2e2e2; // Hover, sélections actives
+$color-surface-dim:               #dadad9;
+$color-surface-variant:           #e2e2e2;
+$color-surface-tint:              #455f88;
+
+// Error
+$color-error:           #ba1a1a;
+$color-error-container: #ffdad6;
+$color-on-error:        #ffffff;
+$color-on-error-container: #93000a;
+
+// Outline
+$color-outline:         #74777f;
+$color-outline-variant: #c4c6cf;
+
+// Text
+$color-on-surface:         #1a1c1c;
+$color-on-surface-variant: #43474e;
+$color-background:         #f9f9f8;
+$color-on-background:      #1a1c1c;
+
+// Inverse
+$color-inverse-surface:    #2f3130;
+$color-inverse-on-surface: #f1f1f0;
+$color-inverse-primary:    #adc7f7;
+
+// Focus (non-négociable WCAG AA)
+$color-focus: #002045;
+
+// Gradient CTA (Stitch : "matte finish" primary → primary-container à 135deg)
+$gradient-cta: linear-gradient(135deg, #{$color-primary}, #{$color-primary-container});

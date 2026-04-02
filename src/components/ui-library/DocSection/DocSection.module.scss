@@ -1,0 +1,106 @@
+@use '@/design/tokens' as *;
+
+.doc {
+  display: flex;
+  flex-direction: column;
+  gap: $space-10;
+  max-width: 860px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    padding-bottom: $space-6;
+    border-bottom: 1px solid $color-surface-container-highest;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    letter-spacing: $letter-spacing-tight;
+  }
+
+  &__description {
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    color: $color-on-surface-variant;
+    line-height: $line-height-relaxed;
+  }
+
+  &__sectionTitle {
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+    margin-bottom: $space-5;
+  }
+
+  &__examples {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+
+  &__props {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tableWrapper {
+    overflow-x: auto;
+    border-radius: $radius-md;
+    background-color: $color-surface-container-lowest;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    th {
+      padding: $space-3 $space-4;
+      text-align: left;
+      font-family: $font-code;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+      letter-spacing: $letter-spacing-wide;
+      text-transform: uppercase;
+      color: $color-on-surface-variant;
+      background-color: $color-surface-container-low;
+      border-bottom: 1px solid $color-surface-container-highest;
+    }
+
+    td {
+      padding: $space-3 $space-4;
+      color: $color-on-surface;
+      border-bottom: 1px solid $color-surface-container;
+      vertical-align: top;
+      line-height: $line-height-normal;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  &__codeInline {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    background-color: $color-surface-container;
+    padding: 2px $space-1;
+    border-radius: $radius-sm;
+    color: $color-primary-container;
+  }
+
+  &__required {
+    color: $color-error;
+    margin-left: $space-1;
+    font-weight: $font-weight-bold;
+  }
+
+  &__empty {
+    color: $color-on-surface-variant;
+  }
+}

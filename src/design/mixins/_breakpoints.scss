@@ -1,0 +1,34 @@
+// =============================================================================
+// MIXIN — Breakpoints (mobile-first)
+// Maquettes Stitch : desktop 1280px
+// =============================================================================
+
+@use '@/design/tokens' as *;
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    @media (min-width: #{$bp-sm}) { @content; }
+  } @else if $size == md {
+    @media (min-width: #{$bp-md}) { @content; }
+  } @else if $size == lg {
+    @media (min-width: #{$bp-lg}) { @content; }
+  } @else if $size == xl {
+    @media (min-width: #{$bp-xl}) { @content; }
+  } @else if $size == 2xl {
+    @media (min-width: #{$bp-2xl}) { @content; }
+  } @else {
+    @warn "Breakpoint inconnu : #{$size}. Utiliser sm, md, lg, xl ou 2xl.";
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @if $size == sm {
+    @media (max-width: calc(#{$bp-sm} - 1px)) { @content; }
+  } @else if $size == md {
+    @media (max-width: calc(#{$bp-md} - 1px)) { @content; }
+  } @else if $size == lg {
+    @media (max-width: calc(#{$bp-lg} - 1px)) { @content; }
+  } @else if $size == xl {
+    @media (max-width: calc(#{$bp-xl} - 1px)) { @content; }
+  }
+}

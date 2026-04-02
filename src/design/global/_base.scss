@@ -1,0 +1,55 @@
+// =============================================================================
+// GLOBAL — Base typographique + Google Fonts
+// =============================================================================
+
+@use '@/design/tokens' as *;
+
+// Google Fonts — Space Grotesk, Public Sans, JetBrains Mono
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  // Tokens CSS custom properties (pour le dark mode toggle via JS)
+  --color-surface: #{$color-surface};
+  --color-surface-container-lowest: #{$color-surface-container-lowest};
+  --color-surface-container-low: #{$color-surface-container-low};
+  --color-surface-container: #{$color-surface-container};
+  --color-surface-container-high: #{$color-surface-container-high};
+  --color-surface-container-highest: #{$color-surface-container-highest};
+  --color-on-surface: #{$color-on-surface};
+  --color-on-surface-variant: #{$color-on-surface-variant};
+  --color-primary: #{$color-primary};
+  --color-on-primary: #{$color-on-primary};
+  --color-secondary: #{$color-secondary};
+  --color-focus: #{$color-focus};
+  --color-outline: #{$color-outline};
+  --color-outline-variant: #{$color-outline-variant};
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: $font-body;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-on-surface;
+  background-color: $color-surface;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+}
+
+code, kbd, samp, pre {
+  font-family: $font-code;
+  font-size: $font-size-sm;
+}

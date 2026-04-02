@@ -1,0 +1,10 @@
+// =============================================================================
+// GLOBALS — Point d'entrée des styles globaux
+// Importé une seule fois dans src/app/layout.tsx
+// =============================================================================
+
+@use '@/design/global/reset';
+@use '@/design/global/base';
+@use '@/design/global/focus';
+@use '@/design/global/skip-links';
+@use '@/design/global/dark-mode';

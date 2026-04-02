@@ -1,0 +1,27 @@
+@use '@/design/tokens' as *;
+
+.cardDemo {
+  &__header {
+    display: flex;
+    gap: $space-2;
+  }
+
+  &__title {
+    font-family: $font-body;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+  }
+
+  &__desc {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+    line-height: $line-height-normal;
+  }
+
+  &__tags {
+    display: flex;
+    gap: $space-2;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,37 @@
+// =============================================================================
+// TOKENS — Typographie
+// Stitch : Space Grotesk (headlines), Public Sans (body), JetBrains Mono (code)
+// =============================================================================
+
+// Familles
+$font-display: 'Space Grotesk', sans-serif;  // Headers, titres — "Editorial Authority"
+$font-body:    'Public Sans', sans-serif;     // Body — Hyperlegible, distinct character shapes
+$font-code:    'JetBrains Mono', monospace;  // Code blocks, labels techniques
+
+// Échelle
+$font-size-xs:  0.75rem;   // 12px — label-sm, metadata
+$font-size-sm:  0.875rem;  // 14px — label-md
+$font-size-md:  1rem;      // 16px — body-md (minimum pour instructions)
+$font-size-lg:  1.125rem;  // 18px — body-lg
+$font-size-xl:  1.25rem;   // 20px — title-sm
+$font-size-2xl: 1.5rem;    // 24px — title-md
+$font-size-3xl: 2rem;      // 32px — display-sm
+$font-size-4xl: 2.5rem;    // 40px — display-md
+$font-size-5xl: 3rem;      // 48px — display-lg (hero, letter-spacing -2%)
+
+// Graisse
+$font-weight-regular:  400;
+$font-weight-medium:   500;
+$font-weight-semibold: 600;
+$font-weight-bold:     700;
+
+// Interligne
+$line-height-tight:  1.2;
+$line-height-snug:   1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+
+// Letter-spacing
+$letter-spacing-tight:  -0.02em; // Headers display-lg
+$letter-spacing-normal: 0;
+$letter-spacing-wide:   0.04em;  // Labels uppercase

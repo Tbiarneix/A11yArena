@@ -1,0 +1,42 @@
+@use '@/design/tokens' as *;
+
+.docExample {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  padding: $space-6;
+  background-color: $color-surface-container-lowest;
+  border-radius: $radius-md;
+
+  &__title {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface-variant;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+    align-items: flex-start;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__canvas {
+    padding: $space-6;
+    background-color: $color-surface-container;
+    border-radius: $radius-md;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-4;
+    align-items: flex-start;
+  }
+}

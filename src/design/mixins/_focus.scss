@@ -1,0 +1,22 @@
+// =============================================================================
+// MIXIN — Focus ring
+// WCAG AA : :focus-visible uniquement (pas :focus)
+// Couleur : $color-focus (#002045) en light, $color-focus-dark en dark
+// =============================================================================
+
+@use '@/design/tokens' as *;
+
+@mixin focus-ring {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-focus;
+    outline-offset: 2px;
+
+    @media (prefers-color-scheme: dark) {
+      outline-color: $color-focus-dark;
+    }
+  }
+}

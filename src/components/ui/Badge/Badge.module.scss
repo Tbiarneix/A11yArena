@@ -1,0 +1,51 @@
+@use '@/design/tokens' as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $space-1 $space-2;
+  border-radius: $radius-sm;
+  font-family: $font-code;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  // Types de challenge (Stitch)
+  &--fix {
+    background-color: rgba($color-secondary, 0.12);
+    color: $color-secondary;
+  }
+
+  &--build {
+    background-color: rgba($color-primary, 0.1);
+    color: $color-primary;
+  }
+
+  &--audit {
+    background-color: rgba($color-tertiary-container, 0.5);
+    color: $color-tertiary;
+  }
+
+  // Niveaux de difficulté (Stitch)
+  &--easy {
+    background-color: rgba($color-secondary, 0.12);
+    color: $color-secondary;
+  }
+
+  &--medium {
+    background-color: rgba($color-primary, 0.1);
+    color: $color-primary-container;
+  }
+
+  &--hard {
+    background-color: rgba($color-tertiary, 0.12);
+    color: $color-tertiary;
+  }
+
+  &--neutral {
+    background-color: $color-surface-container-high;
+    color: $color-on-surface-variant;
+  }
+}

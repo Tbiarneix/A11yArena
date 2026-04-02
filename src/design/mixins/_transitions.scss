@@ -1,0 +1,22 @@
+// =============================================================================
+// MIXIN — Transitions
+// prefers-reduced-motion respecté sur toutes les animations
+// =============================================================================
+
+@mixin transition($properties: all, $duration: 150ms, $easing: ease) {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: $properties $duration $easing;
+  }
+}
+
+@mixin transition-colors {
+  @include transition(color background-color border-color outline-color, 150ms, ease);
+}
+
+@mixin transition-transform {
+  @include transition(transform, 200ms, ease);
+}
+
+@mixin transition-opacity {
+  @include transition(opacity, 150ms, ease);
+}

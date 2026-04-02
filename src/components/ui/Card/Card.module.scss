@@ -1,0 +1,38 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.card {
+  // Stitch "No-Line Rule" : fond + décalage tonal, jamais de border
+  background-color: $color-surface-container-lowest;
+  border-radius: $radius-md;
+  padding: $space-5;
+  @include transition-colors;
+
+  // Variantes de layout
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+
+  &--horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: $space-4;
+    align-items: flex-start;
+  }
+
+  // Carte interactive (cliquable)
+  &--interactive {
+    cursor: pointer;
+    @include focus-ring;
+
+    &:hover {
+      background-color: $color-surface-container-low;
+    }
+
+    &:active {
+      background-color: $color-surface-container;
+    }
+  }
+}

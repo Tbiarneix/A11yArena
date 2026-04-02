@@ -1,0 +1,93 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: $space-10;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    padding-bottom: $space-8;
+    border-bottom: 1px solid $color-surface-container-highest;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-tight;
+    color: $color-on-surface;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    color: $color-on-surface-variant;
+    max-width: 600px;
+    line-height: $line-height-relaxed;
+  }
+
+  &__meta {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+
+    strong {
+      color: $color-primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &__groups {
+    display: flex;
+    flex-direction: column;
+    gap: $space-10;
+  }
+
+  &__groupTitle {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+    color: $color-on-surface-variant;
+    margin-bottom: $space-4;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: $space-4;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    padding: $space-5;
+    background-color: $color-surface-container-lowest;
+    border-radius: $radius-md;
+    text-decoration: none;
+    @include transition-colors;
+    @include focus-ring;
+
+    &:hover {
+      background-color: $color-surface-container-low;
+    }
+  }
+
+  &__cardName {
+    font-family: $font-display;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+  }
+
+  &__cardDesc {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+    line-height: $line-height-normal;
+  }
+}

@@ -1,0 +1,39 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  border-radius: $radius-md;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  box-shadow: $shadow-dropdown;
+  @include transition-colors;
+
+  &--info {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+    border-left: 3px solid $color-primary;
+  }
+
+  &--success {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+    border-left: 3px solid $color-secondary;
+  }
+
+  &--warning {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+    border-left: 3px solid $color-tertiary-container;
+  }
+
+  &--error {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+    border-left: 3px solid $color-error;
+  }
+}

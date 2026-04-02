@@ -1,0 +1,46 @@
+// =============================================================================
+// TOKENS — Couleurs Dark Mode
+// Extraites des 9 écrans dark de Stitch (project 15833478698754473596)
+// Ces variables surchargent les tokens light dans global/_dark-mode.scss
+// =============================================================================
+
+// Surfaces dark
+$color-surface-dark:                   #121412;
+$color-surface-container-lowest-dark:  #0e0f0e;
+$color-surface-container-low-dark:     #1a1c1c;
+$color-surface-container-dark:         #1e2020;
+$color-surface-container-high-dark:    #282a2a;
+$color-surface-container-highest-dark: #333535;
+$color-surface-dim-dark:               #111311;
+
+// Text dark
+$color-on-surface-dark:         #e2e3e1;
+$color-on-surface-variant-dark: #c2c8bf;
+$color-background-dark:         #121412;
+$color-on-background-dark:      #e2e3e1;
+
+// Primary dark (inversé)
+$color-primary-dark:           #adc7f7;
+$color-primary-container-dark: #1a365d;
+$color-on-primary-dark:        #001b3c;
+
+// Secondary dark
+$color-secondary-dark:           #74db9d;
+$color-secondary-container-dark: #005230;
+$color-on-secondary-dark:        #003920;
+
+// Tertiary dark
+$color-tertiary-dark:           #ffb68f;
+$color-tertiary-container-dark: #5d2500;
+$color-on-tertiary-dark:        #5a1c00;
+
+// Error dark
+$color-error-dark:           #ffb4ab;
+$color-error-container-dark: #93000a;
+
+// Outline dark
+$color-outline-dark:         #8c9089;
+$color-outline-variant-dark: #42493f;
+
+// Focus dark (contraste maintenu sur fond sombre)
+$color-focus-dark: #adc7f7;

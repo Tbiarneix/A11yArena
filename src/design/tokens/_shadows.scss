@@ -1,0 +1,14 @@
+// =============================================================================
+// TOKENS — Ombres
+// Stitch : "Elevation & Depth: Tonal Stacking"
+// Les ombres sont un dernier recours, utilisées uniquement pour les éléments flottants
+// Préférer les décalages de fond (surface hierarchy) pour séparer les sections
+// =============================================================================
+
+// Modals, popovers — tint navy jamais pure grey
+$shadow-modal: 0 20px 40px rgba(0, 32, 69, 0.08);
+
+// Tooltips, dropdowns
+$shadow-dropdown: 0 8px 24px rgba(0, 32, 69, 0.10);
+
+$shadow-none: none;

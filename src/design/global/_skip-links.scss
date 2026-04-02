@@ -1,0 +1,37 @@
+// =============================================================================
+// GLOBAL — Skip links
+// Présents sur TOUTES les pages (règle critique A11yArena)
+// =============================================================================
+
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $z-tooltip;
+  display: flex;
+  gap: $space-2;
+  padding: $space-2;
+
+  &__link {
+    @include visually-hidden;
+    @include transition-colors;
+    padding: $space-2 $space-4;
+    background-color: $color-primary;
+    color: $color-on-primary;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    text-decoration: none;
+    border-radius: $radius-sm;
+
+    &:focus-visible {
+      @include visually-hidden-focusable;
+      position: fixed;
+      outline: 2px solid $color-on-primary;
+      outline-offset: 2px;
+    }
+  }
+}

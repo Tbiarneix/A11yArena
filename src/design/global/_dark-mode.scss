@@ -1,0 +1,48 @@
+// =============================================================================
+// GLOBAL — Dark mode
+// Surcharge les tokens via media query ET via classe .dark sur <html>
+// Les composants n'ont rien à faire — ils consomment les tokens qui changent ici
+// =============================================================================
+
+@use '@/design/tokens' as *;
+
+@mixin dark-tokens {
+  --color-surface: #{$color-surface-dark};
+  --color-surface-container-lowest: #{$color-surface-container-lowest-dark};
+  --color-surface-container-low: #{$color-surface-container-low-dark};
+  --color-surface-container: #{$color-surface-container-dark};
+  --color-surface-container-high: #{$color-surface-container-high-dark};
+  --color-surface-container-highest: #{$color-surface-container-highest-dark};
+  --color-on-surface: #{$color-on-surface-dark};
+  --color-on-surface-variant: #{$color-on-surface-variant-dark};
+  --color-primary: #{$color-primary-dark};
+  --color-on-primary: #{$color-on-primary-dark};
+  --color-secondary: #{$color-secondary-dark};
+  --color-focus: #{$color-focus-dark};
+  --color-outline: #{$color-outline-dark};
+  --color-outline-variant: #{$color-outline-variant-dark};
+
+  color-scheme: dark;
+}
+
+// Auto dark mode (prefers-color-scheme)
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-tokens;
+  }
+
+  body {
+    color: $color-on-surface-dark;
+    background-color: $color-surface-dark;
+  }
+}
+
+// Toggle manuel via classe .dark sur <html>
+html.dark {
+  @include dark-tokens;
+
+  body {
+    color: $color-on-surface-dark;
+    background-color: $color-surface-dark;
+  }
+}

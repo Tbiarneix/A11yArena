@@ -1,0 +1,31 @@
+@use '@/design/tokens' as *;
+
+.codeBlock {
+  border-radius: $radius-md;
+  overflow: hidden;
+
+  &__label {
+    padding: $space-2 $space-4;
+    background-color: $color-surface-container-highest;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    letter-spacing: $letter-spacing-wide;
+    text-transform: uppercase;
+  }
+
+  &__pre {
+    margin: 0;
+    padding: $space-5;
+    background-color: $color-surface-container-low;
+    overflow-x: auto;
+  }
+
+  &__code {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    line-height: $line-height-relaxed;
+    color: $color-on-surface;
+    white-space: pre;
+  }
+}

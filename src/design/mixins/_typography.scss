@@ -1,0 +1,71 @@
+// =============================================================================
+// MIXIN — Typographie
+// =============================================================================
+
+@use '@/design/tokens' as *;
+
+@mixin text-display-lg {
+  font-family: $font-display;
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+}
+
+@mixin text-display-md {
+  font-family: $font-display;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+}
+
+@mixin text-display-sm {
+  font-family: $font-display;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+}
+
+@mixin text-title-md {
+  font-family: $font-display;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+}
+
+@mixin text-title-sm {
+  font-family: $font-body;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-snug;
+}
+
+@mixin text-body-md {
+  font-family: $font-body;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+@mixin text-body-sm {
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+}
+
+@mixin text-label-md {
+  font-family: $font-code;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+}
+
+@mixin text-label-sm {
+  font-family: $font-code;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-wide;
+}

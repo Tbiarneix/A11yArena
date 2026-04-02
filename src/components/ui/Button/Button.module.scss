@@ -1,0 +1,80 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  border: none;
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  @include transition-colors;
+  @include focus-ring;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  // Tailles
+  &--sm {
+    padding: $space-1 $space-3;
+    font-size: $font-size-sm;
+  }
+
+  &--md {
+    padding: $space-2 $space-5;
+    font-size: $font-size-md;
+  }
+
+  &--lg {
+    padding: $space-3 $space-6;
+    font-size: $font-size-lg;
+  }
+
+  // Variantes
+  &--primary {
+    background: $gradient-cta;
+    color: $color-on-primary;
+
+    &:hover:not(:disabled) {
+      opacity: 0.92;
+    }
+
+    &:active:not(:disabled) {
+      opacity: 0.84;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+
+    &:hover:not(:disabled) {
+      background-color: $color-surface-container-highest;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $color-surface-container-highest;
+      opacity: 0.92;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $color-primary;
+
+    &:hover:not(:disabled) {
+      background-color: $color-surface-container-low;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $color-surface-container;
+    }
+  }
+}

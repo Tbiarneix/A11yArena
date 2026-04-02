@@ -1,0 +1,64 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  &__label {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-on-surface;
+  }
+
+  &__input {
+    background-color: $color-surface-container-low;
+    color: $color-on-surface;
+    font-family: $font-body;
+    font-size: $font-size-md;
+    border: none;
+    // Stitch : bottom-line style — s'étend du centre au focus
+    border-bottom: 2px solid $color-outline;
+    border-radius: $radius-sm $radius-sm 0 0;
+    padding: $space-3 $space-4;
+    width: 100%;
+    @include transition(border-color, 150ms, ease);
+
+    &::placeholder {
+      color: $color-on-surface-variant;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $color-primary;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-focus;
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__hint {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+  }
+
+  &__error {
+    font-size: $font-size-sm;
+    color: $color-error;
+  }
+
+  &--error {
+    .field__input {
+      border-bottom-color: $color-error;
+    }
+  }
+}

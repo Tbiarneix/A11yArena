@@ -1,0 +1,13 @@
+// =============================================================================
+// TOKENS — Barrel export
+// Usage : @use "@/design/tokens" as *;
+// =============================================================================
+
+@forward 'colors';
+@forward 'dark-mode';
+@forward 'typography';
+@forward 'spacing';
+@forward 'radii';
+@forward 'shadows';
+@forward 'breakpoints';
+@forward 'z-index';

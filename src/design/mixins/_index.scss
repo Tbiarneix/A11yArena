@@ -1,0 +1,11 @@
+// =============================================================================
+// MIXINS — Barrel export
+// Usage : @use "@/design/mixins" as *;
+// =============================================================================
+
+@forward 'focus';
+@forward 'breakpoints';
+@forward 'visually-hidden';
+@forward 'transitions';
+@forward 'typography';
+@forward 'truncate';

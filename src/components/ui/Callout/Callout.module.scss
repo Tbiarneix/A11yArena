@@ -1,0 +1,57 @@
+@use '@/design/tokens' as *;
+
+// Stitch : "Need a hint", "Before (broken)", "After (fixed)"
+// Fond surface-container-low + bordure left colorée
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  padding: $space-4 $space-5;
+  background-color: $color-surface-container-low;
+  border-radius: 0 $radius-md $radius-md 0;
+  border-left: 3px solid currentColor;
+
+  &__title {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+  }
+
+  &__body {
+    font-family: $font-body;
+    font-size: $font-size-md;
+    color: $color-on-surface;
+  }
+
+  // Variantes — couleur de la bordure left
+  &--info {
+    color: $color-primary;
+  }
+
+  &--success {
+    color: $color-secondary;
+
+    .callout__body {
+      // "After (fixed)" — légère teinte verte
+      color: $color-on-surface;
+    }
+  }
+
+  &--warning {
+    color: $color-tertiary-container;
+  }
+
+  &--error {
+    color: $color-error;
+    // "Before (broken)" — légère teinte rouge
+    background-color: mix(white, $color-error-container, 60%);
+  }
+
+  &--hint {
+    // "Need a hint" (Stitch Challenge Playground)
+    color: $color-primary-container;
+    background-color: mix(white, $color-primary, 94%);
+  }
+}
