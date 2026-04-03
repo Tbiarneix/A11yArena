@@ -1,0 +1,41 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.code-editor {
+  height: 100%;
+  background-color: #1a1f2e;
+  overflow: hidden;
+
+  // CodeMirror theme overrides via CSS variables
+  --cm-background: #1a1f2e;
+  --cm-text: #e2e8f0;
+  --cm-keyword: #86a0cd;
+  --cm-string: #8ef5b5;
+  --cm-comment: #6b7280;
+  --cm-number: #f57d32;
+  --cm-tag: #f97316;
+  --cm-attr: #86a0cd;
+
+  :global(.cm-editor) {
+    height: 100%;
+    background-color: var(--cm-background);
+    color: var(--cm-text);
+  }
+
+  :global(.cm-scroller) {
+    font-family: $font-code;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+  }
+
+  :global(.cm-line) {
+    padding: 0 $space-3;
+  }
+
+  :global(.tok-keyword) { color: var(--cm-keyword); }
+  :global(.tok-string) { color: var(--cm-string); }
+  :global(.tok-comment) { color: var(--cm-comment); font-style: italic; }
+  :global(.tok-number) { color: var(--cm-number); }
+  :global(.tok-tagName) { color: var(--cm-tag); }
+  :global(.tok-attributeName) { color: var(--cm-attr); }
+}

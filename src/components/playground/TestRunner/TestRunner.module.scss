@@ -1,0 +1,177 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.test-runner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $color-surface-container-lowest;
+  overflow: hidden;
+
+  &__header {
+    padding: $space-3 $space-4;
+    border-bottom: 1px solid $color-surface-container;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-2;
+  }
+
+  &__title {
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-on-surface;
+    margin: 0;
+  }
+
+  &__score {
+    font-size: $font-size-xs;
+    color: $color-on-surface-variant;
+    margin: 0;
+
+    strong {
+      color: $color-secondary;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__list-wrapper {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &__list {
+    list-style: none;
+    padding: $space-2;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__footer {
+    padding: $space-3 $space-4;
+    border-top: 1px solid $color-surface-container;
+    flex-shrink: 0;
+  }
+
+  &__run-btn {
+    width: 100%;
+    padding: $space-2 $space-4;
+    background-color: $color-primary;
+    color: $color-on-primary;
+    border: none;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: $color-primary-container;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    @include focus-ring;
+  }
+}
+
+.test-item {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+  padding: $space-2 $space-3;
+  border-radius: $radius-md;
+  transition: background-color 0.15s ease;
+
+  &--pass {
+    background-color: rgba($color-secondary, 0.06);
+  }
+
+  &--fail {
+    background-color: rgba($color-error, 0.06);
+  }
+
+  &--pending {
+    background-color: $color-surface-container-low;
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    border-radius: 50%;
+    margin-top: 2px;
+
+    .test-item--pass & {
+      color: $color-secondary;
+    }
+
+    .test-item--fail & {
+      color: $color-error;
+    }
+
+    .test-item--pending & {
+      color: $color-on-surface-variant;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__description {
+    font-size: $font-size-xs;
+    color: $color-on-surface;
+    margin: 0 0 $space-1;
+    line-height: 1.4;
+  }
+
+  &__wcag {
+    display: inline-block;
+    font-family: $font-code;
+    font-size: 10px;
+    color: $color-primary;
+    background-color: rgba($color-primary, 0.08);
+    padding: 1px $space-2;
+    border-radius: $radius-sm;
+  }
+
+  &__message {
+    font-size: 11px;
+    color: $color-error;
+    margin: $space-1 0 0;
+    line-height: 1.4;
+  }
+
+  &__impact {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: $font-weight-bold;
+    padding: 1px $space-2;
+    border-radius: $radius-sm;
+    margin-top: $space-1;
+
+    &--critical { background-color: $color-error-container; color: $color-on-error-container; }
+    &--serious { background-color: rgba($color-error, 0.15); color: $color-error; }
+    &--moderate { background-color: rgba(#f59e0b, 0.15); color: #92400e; }
+    &--minor { background-color: $color-surface-container-high; color: $color-on-surface-variant; }
+  }
+
+  &__status {
+    flex-shrink: 0;
+  }
+}

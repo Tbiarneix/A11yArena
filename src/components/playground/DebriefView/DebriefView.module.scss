@@ -1,0 +1,352 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+.debrief {
+  &__section {
+    padding: $space-10 0;
+    border-bottom: 1px solid $color-surface-container;
+
+    &:nth-child(even) {
+      background-color: $color-surface-container-low;
+    }
+  }
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 $space-6;
+  }
+
+  // ── Banner ────────────────────────────────────────────────────────
+  &__banner {
+    display: flex;
+    align-items: center;
+    gap: $space-5;
+    padding: $space-6;
+    border-radius: $radius-md;
+    margin-bottom: $space-8;
+
+    &--success {
+      background-color: rgba($color-secondary, 0.1);
+      border-left: 4px solid $color-secondary;
+    }
+
+    &--partial {
+      background-color: rgba($color-primary, 0.06);
+      border-left: 4px solid $color-primary;
+    }
+  }
+
+  &__banner-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  &__banner-title {
+    font-family: $font-display;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    margin: 0 0 $space-1;
+  }
+
+  &__banner-subtitle {
+    font-size: $font-size-md;
+    color: $color-on-surface-variant;
+    margin: 0;
+  }
+
+  // ── Stats ─────────────────────────────────────────────────────────
+  &__stats {
+    display: flex;
+    gap: $space-6;
+    flex-wrap: wrap;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+    min-width: 80px;
+  }
+
+  &__stat-value {
+    font-family: $font-display;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    line-height: 1;
+  }
+
+  &__stat-label {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+  }
+
+  // ── Section heading ───────────────────────────────────────────────
+  &__section-title {
+    font-family: $font-display;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    margin: 0 0 $space-6;
+  }
+
+  // ── Results list ──────────────────────────────────────────────────
+  &__results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__result-item {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-3;
+    padding: $space-4;
+    border-radius: $radius-md;
+
+    &--pass { background-color: rgba($color-secondary, 0.06); }
+    &--fail { background-color: rgba($color-error, 0.06); }
+    &--pending { background-color: $color-surface-container-low; }
+  }
+
+  &__result-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    flex-shrink: 0;
+
+    .debrief__result-item--pass & { color: $color-secondary; }
+    .debrief__result-item--fail & { color: $color-error; }
+    .debrief__result-item--pending & { color: $color-on-surface-variant; }
+  }
+
+  &__result-content {
+    flex: 1;
+  }
+
+  &__result-desc {
+    font-size: $font-size-md;
+    color: $color-on-surface;
+    margin: 0 0 $space-2;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__result-wcag {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-primary;
+  }
+
+  &__result-message {
+    font-size: $font-size-sm;
+    color: $color-error;
+    margin: $space-2 0 0;
+  }
+
+  // ── Impact cards ──────────────────────────────────────────────────
+  &__impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-4;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__impact-card {
+    padding: $space-5;
+    background-color: $color-surface-container-lowest;
+    border-radius: $radius-md;
+    border: 1px solid $color-surface-container;
+  }
+
+  &__impact-card-icon {
+    font-size: 1.75rem;
+    margin-bottom: $space-3;
+  }
+
+  &__impact-card-title {
+    font-family: $font-display;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    color: $color-on-surface;
+    margin: 0 0 $space-2;
+  }
+
+  &__impact-card-text {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  // ── WCAG table ────────────────────────────────────────────────────
+  &__table-wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    th {
+      padding: $space-3 $space-4;
+      text-align: left;
+      font-weight: $font-weight-semibold;
+      color: $color-on-surface-variant;
+      background-color: $color-surface-container-low;
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-wide;
+      border-bottom: 2px solid $color-surface-container;
+    }
+
+    td {
+      padding: $space-3 $space-4;
+      border-bottom: 1px solid $color-surface-container;
+      color: $color-on-surface;
+      vertical-align: middle;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background-color: $color-surface-container-low; }
+  }
+
+  &__table-code {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: $color-primary;
+    background-color: rgba($color-primary, 0.08);
+    padding: 2px $space-2;
+    border-radius: $radius-sm;
+    font-weight: $font-weight-bold;
+  }
+
+  &__level-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: $font-weight-bold;
+    padding: 2px $space-2;
+    border-radius: $radius-sm;
+    background-color: rgba($color-secondary, 0.15);
+    color: $color-secondary;
+  }
+
+  &__status-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: $font-weight-semibold;
+    padding: 3px $space-2;
+    border-radius: $radius-sm;
+
+    &--pass {
+      background-color: rgba($color-secondary, 0.12);
+      color: $color-secondary;
+    }
+
+    &--fail {
+      background-color: rgba($color-error, 0.12);
+      color: $color-error;
+    }
+
+    &--pending {
+      background-color: $color-surface-container-high;
+      color: $color-on-surface-variant;
+    }
+  }
+
+  // ── Resources ─────────────────────────────────────────────────────
+  &__resources {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+  }
+
+  &__resource-link {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+    padding: $space-4;
+    background-color: $color-surface-container-lowest;
+    border: 1px solid $color-surface-container;
+    border-radius: $radius-md;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+      border-color: $color-primary;
+      background-color: rgba($color-primary, 0.03);
+    }
+
+    @include focus-ring;
+  }
+
+  &__resource-title {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+  }
+
+  &__resource-desc {
+    font-size: $font-size-sm;
+    color: $color-on-surface-variant;
+  }
+
+  // ── CTA ───────────────────────────────────────────────────────────
+  &__cta {
+    padding: $space-10 0;
+    background-color: $color-primary;
+
+    .debrief__container {
+      display: flex;
+      gap: $space-4;
+      justify-content: center;
+    }
+  }
+
+  &__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: $space-3 $space-6;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    text-decoration: none;
+    background-color: $color-on-primary;
+    color: $color-primary;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($color-on-primary, 0.9);
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: $color-on-primary;
+      border: 2px solid rgba($color-on-primary, 0.5);
+
+      &:hover {
+        border-color: $color-on-primary;
+        background-color: rgba($color-on-primary, 0.08);
+      }
+    }
+
+    @include focus-ring;
+  }
+}

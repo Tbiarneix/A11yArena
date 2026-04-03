@@ -1,0 +1,173 @@
+@use '@/design/tokens' as *;
+@use '@/design/mixins' as *;
+
+// Header height from RootLayout
+$header-height: 64px;
+$topbar-height: 44px;
+$footer-height: 40px;
+
+.playground {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$header-height});
+  background-color: $color-surface-container-low;
+  overflow: hidden;
+
+  // ── Tab bar ─────────────────────────────────────────────────────────
+  &__topbar {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    height: $topbar-height;
+    background-color: #1a1f2e;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+    padding-right: $space-3;
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__tab {
+    padding: 0 $space-4;
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    &--active {
+      color: #ffffff;
+      border-bottom-color: $color-on-primary-container;
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    @include focus-ring;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+  }
+
+  &__action-btn {
+    padding: $space-1 $space-3;
+    font-family: $font-body;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-sm;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    &--primary {
+      background-color: $color-secondary;
+      border-color: $color-secondary;
+      color: $color-on-secondary;
+
+      &:hover:not(:disabled) {
+        background-color: #005432;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    @include focus-ring;
+  }
+
+  // ── 3-panel layout ──────────────────────────────────────────────────
+  &__panels {
+    display: grid;
+    grid-template-columns: 28% 1fr 26%;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      overflow-y: auto;
+    }
+  }
+
+  &__panel {
+    overflow: hidden;
+    border-right: 1px solid $color-surface-container;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  // ── Preview / Tests split (panel 3) ─────────────────────────────────
+  &__preview-pane {
+    height: 50%;
+    border-bottom: 1px solid $color-surface-container;
+    overflow: hidden;
+  }
+
+  &__tests-pane {
+    height: 50%;
+    overflow: hidden;
+  }
+
+  // ── Score footer ────────────────────────────────────────────────────
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    padding: 0 $space-4;
+    height: $footer-height;
+    background-color: $color-primary;
+    flex-shrink: 0;
+  }
+
+  &__footer-label {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    color: rgba($color-on-primary, 0.8);
+    white-space: nowrap;
+  }
+
+  &__progress {
+    flex: 1;
+    height: 6px;
+    background-color: rgba($color-on-primary, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background-color: $color-secondary-container;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+
+  &__footer-score {
+    font-family: $font-code;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    color: $color-on-primary;
+    white-space: nowrap;
+  }
+}
